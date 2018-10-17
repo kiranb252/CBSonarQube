@@ -19,7 +19,7 @@ RUN apt-get update -qqy && apt-get install -qqy curl \
 
 ENV M2_HOME /usr/share/maven
 Add settings.xml /usr/share/maven/config
-RUN cd /usr/share/maven/config \
+RUN cat /usr/share/maven/config/settings.xml \
     && ls -ltr
 # transitively resolve all dependencies
 ADD deps.txt /builder/deps.txt

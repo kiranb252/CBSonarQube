@@ -19,6 +19,8 @@ RUN apt-get update -qqy && apt-get install -qqy curl \
 
 ENV M2_HOME /usr/share/maven
 Add settings.xml /usr/share/maven/apache-maven-3.5.0/config
+RUN cd /usr/share/maven/apache-maven-3.5.0/config \
+    && ls -ltr
 # transitively resolve all dependencies
 ADD deps.txt /builder/deps.txt
 ADD resolve-deps.sh /builder/resolve-deps.sh

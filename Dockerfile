@@ -18,7 +18,7 @@ RUN apt-get update -qqy && apt-get install -qqy curl \
   && rm /var/lib/apt/lists/*_*
 
 ENV M2_HOME /usr/share/maven
-Add settings.xml /usr/share/maven/conf
+ADD settings.xml /usr/share/maven/conf
 RUN ls -d /usr/share/maven
 
 # transitively resolve all dependencies
